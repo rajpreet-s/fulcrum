@@ -1,11 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import Logo from "./Logo";
+import Logo from "../shared/Logo";
 import { Menu, X, CircleDot, LayoutDashboard, DollarSign, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Switch } from "@/components/ui/switch";
+import Link from "next/link";
 
 const Header = () => {
     const [activePage, setActivePage] = useState("features");
@@ -32,6 +33,11 @@ const Header = () => {
         }
         setMobileMenuOpen(false);
     };
+    const redirectTo = (page: string) => (e: React.MouseEvent) => {
+        e.preventDefault();
+        setActivePage(page);
+        window.location.href = page;
+    };
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -43,10 +49,11 @@ const Header = () => {
 
     return (
         <div className="sticky top-0 z-50 pt-8 px-4">
-            <header className="w-full max-w-7xl mx-auto py-3 px-6 md:px-8 flex items-center justify-between">
-                <div className="p-3">
+            <header className="w-full mx-auto py-3 px-6 md:px-8 flex items-center justify-between container mx-auto px-4 py-20">
+                <Link href="/" className="mr-6 flex items-center space-x-2">
                     <Logo />
-                </div>
+                    <span className="hidden font-bold sm:inline-block text-xl">Fulcrum</span>
+                </Link>
 
                 {/* Mobile menu button */}
                 <button
@@ -96,7 +103,7 @@ const Header = () => {
                                         ? "text-accent-foreground bg-accent"
                                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
                                 )}
-                                onClick={handleNavClick("pricing")}
+                                onClick={redirectTo("pricing")}
                             >
                                 <DollarSign size={16} className="inline-block mr-1.5" /> Pricing
                             </ToggleGroupItem>

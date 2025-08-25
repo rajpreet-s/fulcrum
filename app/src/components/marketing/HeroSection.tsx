@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import TaskBoard from "./TaskBoard";
+import TaskBoard from "../app/TaskBoard";
 import { Loader } from "lucide-react";
 const HeroSection = () => {
     const [isVisible, setIsVisible] = useState(false);

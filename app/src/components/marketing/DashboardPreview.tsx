@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import TaskBoard from "./TaskBoard";
+import TaskBoard from "../app/TaskBoard";
 
 const DashboardPreview = () => {
     const [isVisible, setIsVisible] = useState(false);

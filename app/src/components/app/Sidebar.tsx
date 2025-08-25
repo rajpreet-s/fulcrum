@@ -1,14 +1,94 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LayoutDashboard, Briefcase, FileText, Settings, BarChart3, CreditCard, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Logo from "../shared/Logo";
 
-export default function Sidebar() {
-  return (
-    <aside className="w-64 p-4">
-      <nav className="flex flex-col gap-4">
-        <Link href="/dashboard">Dashboard</Link>
-        <Link href="/deals">Deals</Link>
-        <Link href="/reports">Reports</Link>
-        <Link href="/settings">Settings</Link>
-      </nav>
-    </aside>
-  );
-}
+const navigation = [
+    {
+        name: "Dashboard",
+        href: "/dashboard",
+        icon: LayoutDashboard,
+    },
+    {
+        name: "Deals",
+        href: "/deals",
+        icon: Briefcase,
+    },
+    {
+        name: "Reports",
+        href: "/reports",
+        icon: FileText,
+    },
+    {
+        name: "Analytics",
+        href: "/analytics",
+        icon: BarChart3,
+    },
+    {
+        name: "Invoicing",
+        href: "/invoicing",
+        icon: CreditCard,
+    },
+    {
+        name: "Clients",
+        href: "/clients",
+        icon: Users,
+    },
+    {
+        name: "Settings",
+        href: "/settings",
+        icon: Settings,
+    },
+];
+
+const Sidebar = () => {
+    const pathname = usePathname();
+
+    return (
+        <div className="flex h-full w-64 flex-col fixed inset-y-0 z-50 cosmic-glass">
+            <div className="flex h-16 shrink-0 items-center px-6 border-b border-border">
+                <Link href="/dashboard" className="flex items-center space-x-2">
+                    <Logo />
+                    <span className="font-bold text-xl">Fulcrum</span>
+                </Link>
+            </div>
+            <nav className="flex flex-1 flex-col px-4 py-6">
+                <ul role="list" className="space-y-1">
+                    {navigation.map((item) => {
+                        const isActive =
+                            pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
+
+                        return (
+                            <li key={item.name}>
+                                <Link
+                                    href={item.href}
+                                    className={cn(
+                                        "group flex gap-x-3 rounded-md p-3 text-sm font-medium transition-colors",
+                                        isActive
+                                            ? "bg-accent text-accent-foreground"
+                                            : "text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground"
+                                    )}
+                                >
+                                    <item.icon
+                                        className={cn(
+                                            "h-5 w-5 shrink-0",
+                                            isActive
+                                                ? "text-accent-foreground"
+                                                : "text-muted-foreground group-hover:text-accent-foreground"
+                                        )}
+                                        aria-hidden="true"
+                                    />
+                                    {item.name}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </nav>
+        </div>
+    );
+};
+
+export default Sidebar;

@@ -12,3 +12,9 @@ export interface Deal {
         completed: boolean;
     }[];
 }
+export interface Column {
+    id: string;
+    title: string;
+    color: string;
+    deals: Deal[];
+}

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Logo from "@/components/marketing/Logo";
+import Logo from "@/components/shared/Logo";
 import Link from "next/link";
 
 const Header = () => {
