@@ -69,7 +69,8 @@
     }
 
     body {
-        @apply bg-background font-inter text-foreground antialiased;
+        @apply bg-background text-foreground antialiased;
+        font-family: 'Inter', sans-serif;
         letter-spacing: -0.025em;
     }
 
@@ -166,7 +167,7 @@
     }
 
     .task-card {
-        @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-primary/30;
+        @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg;
     }
 
     .task-card.dragging {
@@ -194,6 +195,7 @@
     }
 
     .column-highlight {
-        @apply bg-accent/20 transition-all duration-300;
+        background-color: hsl(var(--accent) / 0.2);
+        transition: background-color 300ms, all 300ms;
     }
 }

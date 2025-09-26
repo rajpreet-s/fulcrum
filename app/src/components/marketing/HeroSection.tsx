@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import TaskBoard from "../app/TaskBoard";
 import { Loader } from "lucide-react";
+import DealsBoard from "../app/dashboard/DealBoard";
+
 const HeroSection = () => {
     const [isVisible, setIsVisible] = useState(false);
     useEffect(() => {
@@ -202,7 +203,7 @@ const HeroSection = () => {
 
                                 {/* Kanban Board */}
                                 <div className="overflow-hidden">
-                                    <TaskBoard />
+                                    <DealsBoard />
                                 </div>
                             </div>
                         </div>
