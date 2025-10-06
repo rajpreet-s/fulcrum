@@ -41,7 +41,6 @@ const DealColumn: React.FC<DealColumnProps> = ({
     };
 
     const getStatusClass = (status: string) => {
-        console.log(status);
         switch (status) {
             case "active":
                 return "bg-blue-500/20 text-blue-600 border-blue-500";
