@@ -1,3 +1,4 @@
+"use client";
 import DealBoard from "@/components/app/dashboard/DealBoard";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
