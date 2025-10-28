@@ -67,7 +67,7 @@ const Header = () => {
 
     return (
         <div className="sticky top-0 z-50 pt-8 px-4">
-            <header className="w-full max-w-7xl mx-auto py-3 px-6 md:px-8 flex items-center justify-between">
+            <header className="w-full max-w-7xl mx-auto py-20 px-6 md:px-8 flex items-center justify-between">
                 <Link href="/" className="mr-6 flex items-center space-x-2">
                     <Logo />
                     <span className="hidden font-bold sm:inline-block text-xl">Fulcrum</span>
