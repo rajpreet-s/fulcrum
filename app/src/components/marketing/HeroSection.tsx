@@ -15,7 +15,7 @@ const HeroSection = () => {
     return (
         <section className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background">
             {/* Cosmic particle effect (background dots) */}
-            <div className="absolute inset-0 cosmic-grid opacity-30"></div>
+            <div className="absolute inset-0 grid-pattern opacity-30"></div>
 
             {/* Gradient glow effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full">
@@ -65,7 +65,7 @@ const HeroSection = () => {
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
                 }`}
             >
-                <div className="cosmic-glow relative rounded-xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
+                <div className="glass-card relative overflow-hidden card-interactive">
                     {/* Dashboard Header */}
                     <div className="bg-card backdrop-blur-md w-full">
                         <div className="flex items-center justify-between p-4 border-b border-border">

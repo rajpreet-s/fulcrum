@@ -11,7 +11,7 @@ export default function Home() {
         <div className="min-h-screen flex flex-col">
             <main className="flex-1">
                 {/* Hero Section */}
-                <section className="container mx-auto px-4 py-20 text-center cosmic-grid">
+                <section className="container mx-auto px-4 py-20 text-center grid-pattern min-h-[400px]">
                     <div className="mx-auto max-w-4xl">
                         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 text-balance">
                             Look Professional. <span className="text-primary">Get Paid Faster.</span>
@@ -26,9 +26,6 @@ export default function Home() {
                                     Start for Free
                                     <ArrowRight className="ml-2 h-5 w-5" />
                                 </Link>
-                            </Button>
-                            <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
-                                <Link href="/demo">Watch Demo</Link>
                             </Button>
                         </div>
                     </div>
