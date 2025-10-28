@@ -73,7 +73,7 @@ const Pricing = () => {
                             key={index}
                             className={`p-6 rounded-xl border flex flex-col h-full ${
                                 plan.popular
-                                    ? "border-primary/50 cosmic-glow bg-card"
+                                    ? "border-primary/50 card-interactive bg-card"
                                     : "border-border gradient-mesh bg-card"
                             } transition-all duration-300 relative`}
                         >
