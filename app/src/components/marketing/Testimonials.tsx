@@ -7,26 +7,26 @@ const Testimonials = () => {
             quote: "Our payment processing efficiency increased by 40% and transaction failures dropped to near zero. The automation features are game-changing.",
             author: "Sarah Johnson",
             position: "CFO at TechCorp",
-            avatar: "bg-cosmic-light/30",
+            avatar: "bg-primary/20",
         },
         {
             quote: "The real-time analytics and fraud detection capabilities have saved us millions. We can spot issues before they become problems.",
             author: "Michael Chen",
             position: "Head of Risk at FinanceFlow",
-            avatar: "bg-cosmic-light/20",
+            avatar: "bg-accent/20",
         },
         {
             quote: "Compliance used to be a nightmare. Now our regulatory reporting is automated and we're always audit-ready.",
             author: "Leila Rodriguez",
             position: "Operations Director at GlobalPay",
-            avatar: "bg-cosmic-light/40",
+            avatar: "bg-primary/30",
         },
     ];
 
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-card relative overflow-hidden">
             {/* Background grid */}
-            <div className="absolute inset-0 cosmic-grid opacity-20"></div>
+            <div className="absolute inset-0 grid-pattern opacity-20"></div>
 
             <div className="max-w-7xl mx-auto space-y-16 relative z-10">
                 <div className="text-center space-y-4 max-w-3xl mx-auto">

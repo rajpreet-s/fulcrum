@@ -1,6 +1,7 @@
 import Sidebar from "@/components/app/Sidebar";
 import { UserNav } from "@/components/app/UserNav";
 import { mockUser } from "@/lib/mock-data";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -16,6 +17,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                         </div>
 
                         <div className="flex items-center gap-4">
+                            <ThemeToggle />
                             <UserNav />
                         </div>
                     </div>

@@ -74,7 +74,7 @@ const Pricing = () => {
                             className={`p-6 rounded-xl border flex flex-col h-full ${
                                 plan.popular
                                     ? "border-primary/50 cosmic-glow bg-card"
-                                    : "border-border cosmic-gradient bg-card"
+                                    : "border-border gradient-mesh bg-card"
                             } transition-all duration-300 relative`}
                         >
                             {plan.popular && (
@@ -128,7 +128,7 @@ const Pricing = () => {
                                     className={
                                         plan.buttonVariant === "default"
                                             ? "w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                                            : "w-full border-border text-foreground hover:bg-muted"
+                                            : "w-full border-border text-foreground hover:bg-muted hover:text-foreground"
                                     }
                                     variant={plan.buttonVariant as "default" | "outline"}
                                 >

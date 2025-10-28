@@ -47,7 +47,7 @@ const Sidebar = () => {
     const pathname = usePathname();
 
     return (
-        <div className="flex h-full w-64 flex-col fixed inset-y-0 z-50 cosmic-glass">
+        <div className="flex h-full w-64 flex-col fixed inset-y-0 z-50 glass">
             <div className="flex h-16 shrink-0 items-center px-6 border-b border-border">
                 <Link href="/dashboard" className="flex items-center space-x-2">
                     <Logo />
