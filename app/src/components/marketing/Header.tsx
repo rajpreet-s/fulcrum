@@ -8,7 +8,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import { productName } from "@/constants/common.constants";
 const navItems = [
     { id: "home", label: "Home", icon: CircleDot, href: "/" },
     { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -70,7 +70,7 @@ const Header = () => {
             <header className="w-full max-w-7xl mx-auto py-3 px-6 md:px-8 flex items-center justify-between">
                 <Link href="/" className="mr-6 flex items-center space-x-2">
                     <Logo />
-                    <span className="hidden font-bold sm:inline-block text-xl">Fulcrum</span>
+                    <span className="hidden font-bold sm:inline-block text-xl">{productName}</span>
                 </Link>
 
                 {/* Mobile menu button */}

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/shared/Logo";
 import Link from "next/link";
+import { productName } from "@/constants/common.constants";
 
 const Header = () => {
     return (
@@ -9,7 +10,7 @@ const Header = () => {
                 <div className="mr-4 hidden md:flex">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
                         <Logo />
-                        <span className="hidden font-bold sm:inline-block text-xl">Fulcrum</span>
+                        <span className="hidden font-bold sm:inline-block text-xl">{productName}</span>
                     </Link>
                     <nav className="flex items-center gap-6 text-sm">
                         <Link

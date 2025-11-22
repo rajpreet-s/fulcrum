@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ChevronLeftIcon, Grid2x2PlusIcon, InstagramIcon } from "lucide-react";
 import { Particles } from "@/components/ui/particles";
+import { productName } from "@/constants/common.constants";
 
 interface AuthPageProps {
     title: string;
@@ -44,7 +45,7 @@ export function AuthPage({ title, description, apiEndpoint, successRedirect, but
             }
         }
     }
-    
+
     return (
         <div className="relative md:h-screen md:overflow-hidden w-full">
             <Particles color="#666666" quantity={120} ease={20} className="absolute inset-0" />
@@ -64,7 +65,7 @@ export function AuthPage({ title, description, apiEndpoint, successRedirect, but
                 <div className="mx-auto space-y-4 sm:w-sm">
                     <div className="flex items-center gap-2">
                         <Grid2x2PlusIcon className="size-6" />
-                        <p className="text-xl font-semibold">Fulcrum</p>
+                        <p className="text-xl font-semibold">{productName}</p>
                     </div>
                     <div className="flex flex-col space-y-1">
                         <h1 className="font-heading text-2xl font-bold tracking-wide">{title}</h1>

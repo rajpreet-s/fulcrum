@@ -1,48 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Briefcase, FileText, Settings, BarChart3, CreditCard, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "../shared/Logo";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-
-const navigation = [
-    {
-        name: "Dashboard",
-        href: "/dashboard",
-        icon: LayoutDashboard,
-    },
-    {
-        name: "Deals",
-        href: "/deals",
-        icon: Briefcase,
-    },
-    {
-        name: "Reports",
-        href: "/reports",
-        icon: FileText,
-    },
-    {
-        name: "Analytics",
-        href: "/analytics",
-        icon: BarChart3,
-    },
-    {
-        name: "Invoicing",
-        href: "/invoicing",
-        icon: CreditCard,
-    },
-    {
-        name: "Clients",
-        href: "/clients",
-        icon: Users,
-    },
-    {
-        name: "Settings",
-        href: "/settings",
-        icon: Settings,
-    },
-];
+import { navigation } from "@/constants/app.constants";
+import { productName } from "@/constants/common.constants";
 
 interface SidebarProps {
     mobileMenuOpen?: boolean;
@@ -94,7 +57,7 @@ const Sidebar = ({ mobileMenuOpen, setMobileMenuOpen }: SidebarProps) => {
                 <div className="flex h-16 shrink-0 items-center px-6 border-b border-border">
                     <Link href="/dashboard" className="flex items-center space-x-2">
                         <Logo />
-                        <span className="font-bold text-xl">Fulcrum</span>
+                        <span className="font-bold text-xl">{productName}</span>
                     </Link>
                 </div>
                 <nav className="flex flex-1 flex-col px-4 py-6">
@@ -105,10 +68,10 @@ const Sidebar = ({ mobileMenuOpen, setMobileMenuOpen }: SidebarProps) => {
             {/* Mobile Sidebar (Sheet) */}
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetContent side="left" className="w-64 p-0">
-                    <SheetHeader className="flex h-16 shrink-0 items-center px-6 border-b border-border">
+                    <SheetHeader className="flex h-16 shrink-0 items-start justify-center px-6 border-b border-border">
                         <SheetTitle className="flex items-center space-x-2">
                             <Logo />
-                            <span className="font-bold text-xl">Fulcrum</span>
+                            <span className="font-bold text-xl">{productName}</span>
                         </SheetTitle>
                     </SheetHeader>
                     <nav className="flex flex-1 flex-col px-4 py-6">
